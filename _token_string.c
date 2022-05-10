@@ -8,9 +8,10 @@
 
 char *_token_string(const char *str)
 {
-	char *new_str = "";
+	char *new_str;
 	int flag = 0, i;
 
+	new_str = malloc(sizeof(char *));
 	for (i = 0; str[i] != '\0' || (flag = 1 && str[i] == ' '); i++)
 	{
 		if (str[i] != ' ')
