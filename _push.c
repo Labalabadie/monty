@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "monty.h"
 
 /**
 * add_dnodeint - adds a new node at the beginning of a listint_t list.
@@ -8,8 +8,7 @@
 * Return: the address of the new element or NULL if it failed
 */
 
-stack_t *_push(stack_t **head, const int n)
-
+stack_t *_push(stack_t **head, unsigned int line_number)
 {
 
 	stack_t *new_node;

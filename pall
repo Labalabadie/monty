@@ -1,0 +1,15 @@
+#include "monty.h"
+
+void (_pall *)(stack_t **stack, unsigned int line_number)
+{
+	stack_t current = NULL;
+
+	current = stack;
+
+	while (current)
+	{
+		printf("%d", current->n);
+		current = current->n;
+	}
+
+}

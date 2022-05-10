@@ -36,6 +36,7 @@ typedef struct instruction_s
 
 
 ssize_t _read(const char *filename);
-
+int _function_selector(char *opcode, stack_t **stack, unsigned int line_number);
+stack_t *_push(stack_t **head, const int n);
 
 #endif

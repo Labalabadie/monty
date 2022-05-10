@@ -17,15 +17,8 @@ ssize_t _read(const char *filename)
    }
 
    fclose(fp);
-   
+
+
+
    return(0);
-}
-
-
-int main(void)
-
-{
-
-_read("00.m");
-return(0);
 }
