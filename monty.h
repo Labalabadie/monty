@@ -34,9 +34,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+int num;
 
 ssize_t _read(const char *filename);
 int _function_selector(char *opcode, stack_t **stack, unsigned int line_number);
 stack_t *_push(stack_t **head, const int n);
 char *_token_string(const char *str);
+int _token_integer(const char *str);
 #endif
