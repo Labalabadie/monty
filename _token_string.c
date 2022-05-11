@@ -21,7 +21,7 @@ char *_token_string(const char *str)
 	{
 		if (flag == 1 && str[i] == ' ')
 			break;
-		if (str[i] != ' ')
+		if (str[i] != ' ' && (str[i] > 58 || str[i] < 47))
 		{
 			chr[0] = str[i];
 			flag = 1;
