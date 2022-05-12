@@ -1,5 +1,10 @@
 #include "monty.h"
-#include <stdlib.h>
+/*
+ *_function_selector - 
+ *@:
+ *
+ *Return:
+ */
 
 int _function_selector(char *opcode, stack_t **stack, unsigned int line_number)
 {
@@ -8,20 +13,24 @@ int _function_selector(char *opcode, stack_t **stack, unsigned int line_number)
 	instruction_t selector[] =
 	{
 		{"push", _push},
-	//	{"pop", _pop},
+	/*	{"pop", _pop},*/
 		{NULL, NULL},
 	};
 
 	while (selector[i].opcode)
 	{
-		if (strcmp(selector[i].opcode, opcode) == 0)
+		if (strcmp(selector[i].opcode, opcode))
 		{
-			if (selector[i].f(_push)(stack, line_number) == 0)
-				return (0); //success, function executed//
+			if (selector[i].f(_push(stack, line_number) == 0)
+			{
+				return (0); /*success, function executed*/
+			}
 			else
-				return (1); //if fail to run function//
+			{
+				return (1); /*if fail to run function*/
+			}
 		}
 		i++;
 	}
-	return(1); //if fail to find function//
+	return(1); /*if fail to find function*/
 }

@@ -2,8 +2,9 @@
 int main()
 {
 	char *a;
-	char *str = "push      111 11";
+ 	char *str = "	     push 3     ";
 	a = _token_string(str);
-	printf("%s", a);
+	num = _token_integer(str);
+	printf("%s\n%d\n", a, num);
 	return (0);
 }

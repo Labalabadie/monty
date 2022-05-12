@@ -1,54 +1,25 @@
 #include "monty.h"
-#include <stdio.h>
-#include <string.h>
-
-int lineas = 0;
-char command[1000][1000]; 
-char *a;
-char *str;
+/**
+ *_read - Reads from filename and sets an index with strtok,one item per line.
+ *@filename: Name of the file to be read, sent from main.c
+ *
+ *Return: Total amount of lines.
+ */
 
 ssize_t _read(const char *filename)
 {
-    FILE *archivo = fopen(filename, "r");
-    char buffer[1000];
+    FILE *archivo = fopen(filename, "r");/* abre en formato lectura *.m*/
+    char buffer[1000];/*largo maximo de caracteres en una linea a leer*/
 
-	int cont = 0;
+    int cont = 0;
 
-  
     while (fgets(buffer, 1000, archivo))
     {
-        
         strtok(buffer, "\n");
-		memcpy(command[cont], buffer, 1000);
-		
+		memcpy(command[cont], buffer, 1000); /* sets global variable command as an array of strings*/
 		cont++;
-		
-		
-
     }
-
 	lineas = cont;
 	
     return (lineas);
 }
-
-int main()
-
-
-
-{	
-	_read("00.m");
-
-
-	printf("lineas %d\n", lineas);	
-    	int i;
-	for (i = 0; i < lineas; i++)
-		{		
-		str = command[i];
-		a = _token_string(str);
-		}
-	printf("com: %s - a: %s\n", command[i], a);
-	printf("str: %s", str);
-	return (0);
-}
-
