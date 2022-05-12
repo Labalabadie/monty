@@ -4,6 +4,8 @@
 
 int lineas = 0;
 char command[1000][1000]; 
+char *a;
+char *str;
 
 ssize_t _read(const char *filename)
 {
@@ -32,15 +34,21 @@ ssize_t _read(const char *filename)
 
 int main()
 
+
+
 {	
 	_read("00.m");
-	
+
+
 	printf("lineas %d\n", lineas);	
-    int i;
+    	int i;
 	for (i = 0; i < lineas; i++)
-
-	printf("%s\n", command[i]);
-
+		{		
+		str = command[i];
+		a = _token_string(str);
+		}
+	printf("com: %s - a: %s\n", command[i], a);
+	printf("str: %s", str);
 	return (0);
 }
 

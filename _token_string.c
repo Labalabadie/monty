@@ -23,9 +23,12 @@ char *_token_string(const char *str)
 			break;
 		if (str[i] != ' ' && (str[i] > 58 || str[i] < 47))
 		{
-			chr[0] = str[i];
-			flag = 1;
-			new_str = strncat(new_str, chr, 1);
+			if (str[i] != '\t')
+			{
+				chr[0] = str[i];
+				flag = 1;
+				new_str = strncat(new_str, chr, 1);
+			}
 		}
 	}
 
