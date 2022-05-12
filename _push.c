@@ -32,5 +32,6 @@ stack_t *_push(stack_t **head, unsigned int line_number)
 	else
 		new_node->next = NULL;
 	*head = new_node;
+	printf("Hola, soy parte de la funcion _push");
 	return (new_node);
 }
