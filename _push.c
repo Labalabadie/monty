@@ -8,7 +8,7 @@
 * Return: the address of the new element or NULL if it failed
 */
 
-stack_t *_push(stack_t **head, unsigned int line_number)
+stack_t _push(stack_t **head, unsigned int line_number)
 {
 
 	stack_t *new_node;
@@ -21,7 +21,7 @@ stack_t *_push(stack_t **head, unsigned int line_number)
 	if (!new_node)
 
 		return (NULL);
-	new_node->n = n;
+	new_node->n = num;
 	new_node->prev = NULL;
 
 	if (*head)
