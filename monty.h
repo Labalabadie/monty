@@ -37,15 +37,15 @@ typedef struct instruction_s
 int (*ins_func)(stack_t **stack, unsigned int line_number);
 
 int num;
-unsigned int lineas;
-char *command[1000][1000];
-char *opcode;
-char *str;
-
 
 ssize_t _read(const char *filename);
+<<<<<<< HEAD
 int _function_selector(char *opcode);
 void _push();
+=======
+int _function_selector(char *opcode, stack_t **stack, unsigned int line_number);
+stack_t _push(stack_t **head,  unsigned int line_number);
+>>>>>>> 3d8db3f721e7d9e401db7f51375cef68644e4379
 char *_token_string(const char *str);
 int _token_integer(const char *str);
 #endif
