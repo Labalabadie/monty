@@ -18,7 +18,5 @@ ssize_t _read(const char *filename)
 
    fclose(fp);
 
-
-
    return(0);
 }
