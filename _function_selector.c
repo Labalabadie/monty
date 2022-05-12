@@ -6,7 +6,7 @@
  *Return:
  */
 
-int _function_selector(char *opcode, stack_t **stack, unsigned int line_number)
+int _function_selector(char *opcode)
 {
 	int i;
 
@@ -19,16 +19,11 @@ int _function_selector(char *opcode, stack_t **stack, unsigned int line_number)
 
 	while (selector[i].opcode)
 	{
-		if (strcmp(selector[i].opcode, opcode))
+		if (strcmp(selector[i].opcode, opcode) == 0)
 		{
-			if (selector[i].f(_push(stack, line_number) == 0)
-			{
-				return (0); /*success, function executed*/
-			}
-			else
-			{
-				return (1); /*if fail to run function*/
-			}
+			printf("llega aca con %s\n", selector[i].opcode);
+			selector[i].f();
+			return (0);
 		}
 		i++;
 	}

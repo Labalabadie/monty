@@ -10,7 +10,6 @@ char *str;
 int main()
 {	
     	unsigned int i;
-	stack_t **stack = NULL;
 
 
 	_read("00.m");
@@ -20,7 +19,7 @@ int main()
 		str = *command[i];
 		opcode = _token_string(str);
 		_token_integer(str); /*sets global value num*/
-		_function_selector(opcode, stack, i + 1);/*i cuenta las lineas*/
+		_function_selector(opcode);/*i cuenta las lineas*/
 		}
 	printf("com: %s - opcode: %s\n", str, opcode);
 	return (0);
