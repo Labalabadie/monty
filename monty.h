@@ -35,15 +35,10 @@ typedef struct instruction_s
 } instruction_t;
 
 int num;
-unsigned int lineas;
-char *command[1000][1000];
-char *opcode;
-char *str;
-
 
 ssize_t _read(const char *filename);
 int _function_selector(char *opcode, stack_t **stack, unsigned int line_number);
-stack_t *_push(stack_t **head, const int n);
+stack_t _push(stack_t **head,  unsigned int line_number);
 char *_token_string(const char *str);
 int _token_integer(const char *str);
 #endif
