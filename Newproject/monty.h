@@ -44,6 +44,12 @@ int num;
 
 typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
 
+/*FUNCTIONS FROM SELECTOR*/
+void _push(stack_t **stack, unsigned int line_number);
+
+
+
+
 
 /*FUNCTIONS*/
 
