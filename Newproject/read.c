@@ -29,7 +29,7 @@ char **_read(const char *filename)
 	read = getline(&buffer, &n, fp);
 		if (read != -1)
 		{
-			_token_integer(buffer);
+			_token_integer( buffer);
 			index[i] = malloc(sizeof(char*));
 			index[i] =  _token_string(buffer);
 			printf("this is opcode: %s\nthis is variable global num:%i\n", index[i], num);

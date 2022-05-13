@@ -16,7 +16,12 @@ int main()
 
 	for (i = 0; index[i] != NULL; i++)
 	{
-		function = _function_selector(_token_only_string(index[i]));
+		printf("This is from main, and index right now is: %s\n", index[i]);
+	}
+	for (i = 0; index[i] != NULL; i++)
+	{
+		function = _function_selector(index[i]);
+		printf("Exito en el retorno de funtion selector\n");
 		function(stack, i);
 	}
 

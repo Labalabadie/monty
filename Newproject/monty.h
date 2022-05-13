@@ -37,10 +37,18 @@ typedef struct instruction_s
 } instruction_t;
 
 
+/*EXTRUCTURE FOR GLOBAL INTERGER*/
+typedef struct num_s
+{
+	int n;
+	struct num_s *prev;
+	struct num_s *next;
+} num_t;
+
 
 /*GLOBAL VARIABLES*/
 int num;
-
+num_t **head;
 
 typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
 
@@ -55,9 +63,10 @@ void _push(stack_t **stack, unsigned int line_number);
 
 char ** _read(const char *filename);
 instruct_func _function_selector(char *opcode);
-void _push(stack_t **stack, unsigned int line_number);
-int _token_integer(const char *str);
 char *_token_string(const char *str);
+int _token_integer(const char *str);
+int _token_integer_linked(const char *str);
 char *_token_only_string(const char *str);
 char *_token_string_integer(const char *str);
+num_t *add_dnodeint_end(const int n);
 #endif

@@ -9,6 +9,7 @@
 instruct_func _function_selector(char *opcode)
 {
 	int i;
+	int n = 0;
 
 	instruction_t selector[] = {
 		{"push", _push},
@@ -25,9 +26,16 @@ instruct_func _function_selector(char *opcode)
 	i = 0;
 	while (selector[i].f != NULL) 
 	{
+
+		n = strcmp(selector[i].opcode, opcode);
+		printf("Hello from while from _function_selector, and the value of n is :%d\nopcode:%s\nselector%i opcode: %s", n, opcode, i, selector[i].opcode);
 		if (opcode != NULL && strcmp(selector[i].opcode, opcode) == 0)
+		{
+			printf("Hello from _function_selector\n");
 			return (selector[i].f);
-		i++;
+			printf("Error in _function selector\n");
+		}
+			i++;
 	}
 
 	return (selector[i].f);

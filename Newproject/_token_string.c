@@ -19,9 +19,9 @@ char *_token_string(const char *str)
 	new_str = malloc(sizeof(char *));
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] != '\t' || str[i] != ' ')
+		if (str[i] != '\t' && str[i] != ' ' && str[i] != '\n')
 		{
-			if (str[i] != '\n')
+			if ((str[i] < 48 || str[i] > 57))
 			{
 				chr[0] = str[i];
 				flag = 1;

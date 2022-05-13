@@ -28,6 +28,7 @@ int _token_integer(const char *str)
 	if (!new_str[0])
 		return (-1);
 	new_str[j + 1] = '\0';
+	add_dnodeint_end(num);
 	num = atoi(new_str);
 	free(new_str);
 	return (num);

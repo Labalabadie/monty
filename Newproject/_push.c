@@ -9,25 +9,34 @@
 */
 void _push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node;
-/*
-	if (!stack)
-		exit ();
-*/
-	new_node = malloc(sizeof(stack_t));
+	stack_t *new;
+	stack_t *h;
 
-/*	if (!new_node)
-		exit ();
-*/
-	new_node->n = num;
-	new_node->prev = NULL;
+	printf("Nro of line: %d\n", line_number);
+	if (!*stack)
+		printf("Not stack in _push\n");
+
+	new = malloc(sizeof(stack_t));
+
+	printf("aafter malloc\n");
+	if (!new)
+		printf("Not new, in _push\n");
 
 	if (*stack)
+	{
+		h = *stack;
+		for (; h->next != NULL; h = h->next)
 		{
-		(*stack)->prev = new_node;
-		new_node->next = *stack;
 		}
+		new->prev = h;
+		h->next = new;
+	}
 	else
-		new_node->next = NULL;
-	printf("Hola, soy parte de la funcion _push%i", line_number);
+	{
+		new->prev = NULL;
+		*stack = new;
+
+	}
+	new->n = num;
+	new->next = NULL;
 }
