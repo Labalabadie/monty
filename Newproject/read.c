@@ -15,6 +15,7 @@ char **_read(const char *filename)
 	int read = 0;
 	int i = 0;
 	char **index;
+	int flag = 0;
 
 	index = malloc(sizeof (char **));
 	fp = fopen(filename,"r");
@@ -30,10 +31,16 @@ char **_read(const char *filename)
 		{
 			_token_integer(buffer);
 			index[i] = malloc(sizeof(char*));
-			index[i] =  _token_string_integer(buffer);
+			index[i] =  _token_string(buffer);
 			printf("this is opcode: %s\nthis is variable global num:%i\n", index[i], num);
 			i++;
+			flag = 1;
 		}
+	}
+	if (flag == 1)
+	{
+		index[i] = malloc(sizeof(char *));
+		index[i] = NULL;
 	}
 	fclose(fp);
 	return(index);

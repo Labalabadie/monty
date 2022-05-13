@@ -41,11 +41,17 @@ typedef struct instruction_s
 /*GLOBAL VARIABLES*/
 int num;
 
+
+typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
+
+
 /*FUNCTIONS*/
+
 char ** _read(const char *filename);
-int _function_selector(char *opcode);
-void _push();
-char *_token_string(const char *str);
+instruct_func _function_selector(char *opcode);
+void _push(stack_t **stack, unsigned int line_number);
 int _token_integer(const char *str);
+char *_token_string(const char *str);
+char *_token_only_string(const char *str);
 char *_token_string_integer(const char *str);
 #endif

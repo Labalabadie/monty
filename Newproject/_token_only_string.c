@@ -1,12 +1,12 @@
 #include "monty.h"
 /**
- *_token_string - Gets a string, ignores all spaces before word
+ *_token_only_string - Gets the first word in a string, ignores all spaces.
  *@str: string to get first word of.
  *
  * Return: first word.
  */
 
-char *_token_string(const char *str)
+char *_token_only_string(const char *str)
 {
 	
 	char *new_str, *chr;
@@ -17,11 +17,13 @@ char *_token_string(const char *str)
 
 	chr = malloc(sizeof(char *));
 	new_str = malloc(sizeof(char *));
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0' || (flag == 1 && str[i] == ' '); i++)
 	{
-		if (str[i] != '\t' || str[i] != ' ')
+		if (flag == 1 && str[i] == ' ')
+			break;
+		if (str[i] != ' ' && (str[i] > 58 || str[i] < 47))
 		{
-			if (str[i] != '\n')
+			if (str[i] != '\t')
 			{
 				chr[0] = str[i];
 				flag = 1;
